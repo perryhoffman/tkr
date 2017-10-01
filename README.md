@@ -1,4 +1,4 @@
-# wellness-tracker
+# tkr
 
 > 
 
@@ -14,7 +14,7 @@ Getting up and running is as easy as 1, 2, 3.
 2. Install your dependencies
 
     ```
-    cd path/to/wellness-tracker; npm install
+    cd path/to/tkr; npm install
     ```
 
 3. Start your app
