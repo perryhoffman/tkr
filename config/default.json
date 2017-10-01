@@ -1,0 +1,69 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "818a69571bceb71b22f49ff0aa87d4bb00c6ff6579dee8b3a662963fac1a5722f478ccfc949ea2e404cf97ab07048a3ef1171a6c2916f71b14ecb5f3c55c3a1c821e6811dece7311832277e4fc86c8ba8d7087dfd8e05d225e78b75330d68e4613380513006a8496c415892bd6a535e7d53f10e6f5eb86dccb7806d0e2fa17a76090d3323213f2570303909b7ddbb97e5146cf58ae94ab160bec83cf835b412496694ee4607c27265cfa3d81ebc724de1e42ff864c7b1e8a973f572ba35a3bc9f4ac934ac4cb7bed75a141119d9155e6c08e8f1dab6ce400b8c32b78495dc51ea5ce51dc3efcf24bfeef6f3070c0f1af00fc4804c3d2f6b7bc3df31fbb9a8c2d",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "facebook": {
+      "clientID": "your facebook client id",
+      "clientSecret": "your facebook client secret",
+      "successRedirect": "/",
+      "scope": [
+        "public_profile",
+        "email"
+      ],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
+      ]
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/wellness_tracker"
+}
